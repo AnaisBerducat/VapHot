@@ -1,0 +1,55 @@
+{% extends 'layout-admin.html.twig' %} {% block title %} Add Product{% endblock %}
+{% block content %}
+<div class="container p-5">
+    <form method="POST">
+    
+        {% if errors is not empty %}
+            {% for error in errors %}
+            <p>{{error}}</p>
+            {% endfor %}
+        {% endif %}
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ article.title }}">
+        </div>
+    
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" id="description" name="description" step="0.01" value="{{ article.description }}">
+        </div>
+    
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="price" step="0.01" value="{{ article.price }}">
+        </div>
+    
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="qty" step="0.01" value="{{ article.price }}">
+        </div>
+    
+        <div class="mb-3">
+            <label for="imageURL" class="form-label">Image Link</label>
+            <input type="text" class="form-control" id="imageURL" name="image" value="{{ article.image }}">
+        </div>
+    
+        <select class="form-select" name="category_id">
+            
+            {% if article.category_id %}
+                <option value="{{article.category_id}}">{{article.category_id}}</option>
+            {% else %}
+                <option value="">Select a category</option>
+            {% endif %}
+            {% for category in categories %}
+            <option value="{{category.id}}">{{category.name}}</option>
+            {% endfor %}
+    
+        </select>
+        <div class="mt-3 text-center">
+            <button type="submit" class="btn btn-primary">Add/Change this product</button>
+        </div>    
+        
+    </form>
+</div>
+
+{% endblock %}

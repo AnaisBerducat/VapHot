@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Login{% endblock %}
+{% block content %}
+<div class="bgproducts">
+    <div class="container">
+        <br>
+        <div id="login" class="container text-center">
+            <div class="text-color">
+                <h1>Login 📨</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center align-items-center">
+            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                {% for error in errors %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{error}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                    <form method="POST">
+                        <div class="mb-3 text-white text-center">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                        </div>
+                        <div class="mb-3 text-white text-center">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <br>
+                        <div class="mb-3 text-white text-center">
+                            <button type="submit" class="btn btn-light">Login</button> 
+                        </div>
+
+                        <div class="class-center text-center shadow p-3 mb-4">
+                            <a class="nav-link text-white" href="/security/register">Don't have an account ? Register here !</a>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

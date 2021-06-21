@@ -1,0 +1,41 @@
+{% extends 'layout-admin.html.twig' %} {% block title %} Categories{% endblock
+%} {% block content %}
+
+<div class="bgproducts">
+	<div class="Article">
+		<br>
+		<div id="categorylist" class="container text-center">
+			<div class="text-color">
+				<h2>Categories 📁</h2>
+			</div>
+		</div>
+		<br>
+		<div class="table-responsive text-center">
+			<table class="table category">
+				<thead>
+					<tr>
+						<th scope="col" class="text-white">Name</th>
+						<th scope="col" class="text-white">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for category in categories %}
+					<tr>
+						<th scope="row" class="text-white">{{ category.name }}</th>
+						<td>
+							<div class="container text-center">
+								<a href="/admin/editCategories/{{ category.id }}" class="btn btn-light btn-sm">Edit</a>
+								<a href="/admin/deleteCategories/{{ category.id }}" class="btn btn-light btn-sm">Delete</a>
+							</div>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="container p-3 mb-6 text-center">
+			<a href="/admin/addCategories" class="btn btn-light">Add a category</a>
+		</div>				
+	</div>
+</div>
+{% endblock %}

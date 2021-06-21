@@ -1,0 +1,65 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Home{% endblock %}
+{% block content %}
+<div class="bgproducts">
+{# Carroussel #}
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/caroussel1.jpg" class="d-block w-100" alt="carroussel1">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/caroussel2.jpg" class="d-block w-100" alt="carroussel2">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/caroussel3.jpg" class="d-block w-100" alt="carroussel3">
+    </div>  
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+</div>
+
+{# shop #}
+
+<div class="shop">
+  <div class="colomne"
+      <div class="text-right align-self-center image">
+        <div class="textbloc">
+          <br>           
+            <div class="text-color text-center">
+              <h1>Start your vaping journey 🌬️</h1>
+            </div>
+          <br>    
+          <div class="text-white">  
+            <p>
+              Welcome to VapHot, your door into the community of vaping. Whether you like big bold e-liquids or sweet fruity notes,
+              or just want to know what is vaping, we’ve got you covered. We offer the latest vape kits, cutting edge technology and a wide range of e-liquids.
+              Also, we keep you up to date with the latest electronic cigarette related information and news.            
+              If you need some expert advice or are unsure which e-cigarette to buy or can’t decide which ecig starter kit fits you best,
+              our customer service team is ready to help.            
+              We have more than 500 e-liquids and hundreds of products tailored for both beginner and advanced users.
+              We stock the best ecig kits, vape pens including the latest liquid ranges, tanks and next generation box mods. 
+              We have everything you need to help you make the switch from traditional cigarettes to electronic cigarettes.
+              With hardware brands such as Smok, Aspire and Innokin and e-liquid brands like Twelve Monkeys, Dinner Lady, I VG and Nasty Juice we have the best selection of vape.
+            </p>
+          </div>   
+        </div>         
+      </div> 
+      
+      <div class="col-6 text-center align-self-center mb-5">
+          <a href="Home/products"><img src="https://i0.wp.com/www.dallassmokeandvape.com/wp-content/uploads/2019/03/IMG_2635.jpeg?resize=525%2C394&ssl=1" class="imghome"></a>    
+      </div>
+    </div>
+</div>
+
+{# carousel card #}
+
+</div>
+{% endblock %}

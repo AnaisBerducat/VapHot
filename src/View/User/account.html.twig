@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Account {% endblock %}
+{% block content %}
+<div class="bgadmin">
+    <br>
+        <div class="text-color">
+            <h2>Hello {{session.user.firstname}} ! Here is your wishlist 🎁</h2>
+        </div>    
+    <br>    
+    <div class="container text-center">
+        <div class="row justify-content-around custom-line">
+            {% for wish in wishlist %}
+            <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="card mb-4 shadow p-3 mb-5 bg-white rounded">
+                <img src="{{wish.article.image}}" class="card-img-top" alt="{{wish.article.title}}">
+                    <div class="card-body text">
+                        <h5 class="card-title">{{wish.article.title}}</h5>
+                        <p class="card-text">{{wish.article.description}}</p>
+                        <p class="card-text">{{wish.article.price}} $</p>                                     
+                        <div class="text-center">
+                            <div class="d-grid-gap-2 d-md-block">                            
+                                <a href="/home/show/{{wish.article.id|number_format}}" class="btn btn-primary btn-sm">Show</a>
+                                <a href="/home/dislike/{{wish.id|number_format}}" class="btn btn-primary btn-sm">Dislike</a>
+                                <a href="/home/addToCart/{{wish.article.id|number_format}}" class="btn btn-primary btn-sm">Add to Cart</a>                  
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

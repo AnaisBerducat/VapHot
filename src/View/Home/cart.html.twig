@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Cart {% endblock %}
+{% block content %}
+<div class="bgproducts">
+  <div class="container text-center">
+    <br>       
+    <div class="text-color">
+        <h1>Cart 🛒</h1>
+    </div>
+    <br>
+      <table class="table table-hover table-bordered text-white">
+        <thead>
+            <tr>
+            <th scope="col">id article</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Total</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in cart %}
+            <tr>
+            <td>{{article.title}}</td>
+            <td>{{article.qty}}</td>
+            <td>{{article.qty * article.price}}</td>
+            <td><a href="/home/deleteFromCart/{{article.id}}"class="btn btn-success btn-sm">Delete</a></td>
+          {% endfor %}
+          </tr>
+        </tbody>
+  </div>
+      </table>
+</div>
+{% endblock %}

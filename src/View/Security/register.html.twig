@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Register{% endblock %}
+{% block content %}
+<div class="bgproducts">
+    <br>
+    <div class="container">
+        <div id="register" class="container text-center">
+            <div class="text-color">
+                <h1>Register 📨</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center align-items-center">
+            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                {% for error in errors %}                
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">                       
+                        {{error}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>                
+                {% endfor %}
+                <form method="POST">
+                    <div class="mb-3 text-white text-center">
+                        <label for="firstname" class="form-label">Firstname</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname">
+                    </div>
+                    <div class="mb-3 text-white text-center">
+                        <label for="lastname" class="form-label">Lastname</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname">
+                    </div>
+                    <div class="mb-3 text-white text-center">
+                        <label for="email" class="form-label">Email address</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                        </div>
+                    </div>
+                    <div class="mb-3 text-white text-center">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="mb-3 text-white text-center">
+                        <label for="password2" class="form-label">Password Check</label>
+                        <input type="password" class="form-control" id="password2" name="password2">
+                    </div>
+                    <br>
+                    <div class="mb-3 text-center">
+                        <button type="submit" class="btn btn-light">Register</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

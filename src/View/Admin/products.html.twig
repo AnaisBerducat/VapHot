@@ -1,0 +1,36 @@
+{% extends 'layout-admin.html.twig' %} {% block title %} Products{% endblock %}
+{% block content %}
+
+
+<div class="bgproducts">
+    <br>       
+        <div class="text-color">
+            <h1>Admin Products📦</h1>
+        </div>
+    <div class="container text-center">
+		<a href="/admin/addProduct" class="btn btn-primary">Add a product</a>
+		<br><br>
+        <div class="row justify-content-around custom-line"> 
+                {% for article in articles %}                 
+                    <div class="col-lg-3 col-md-6 col-xs-12"> 
+                            <div class="card mb-5 shadow p-3 mb-5 bg-white rounded">                    
+                            <img src={{ article.image }} class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ article.title }}</h5>
+                                    <p class="card-text">{{ article.qty }} in stock</p>
+                                    <p class="card-text">Category ID : {{ article.category_id }} </p>
+									<p class="card-text">{{ article.price }} $</p>
+                                    <div class="text-center">
+                                        <div class="d-grid gap-2 d-md-block">
+                                            <a href="/admin/editProduct/{{ article.id }}" class="btn btn-warning btn-sm">Edit</a><br>
+                                            <a href="/admin/deleteProduct/{{ article.id }}" class="btn btn-danger btn-sm">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

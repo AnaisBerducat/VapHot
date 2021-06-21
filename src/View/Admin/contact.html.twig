@@ -1,0 +1,47 @@
+{% extends 'layout-admin.html.twig' %}
+{% block title %} Categories{% endblock %} 
+{% block content %}
+	
+	<div class="bgproducts">
+		<div class="contact">
+			<br>
+			<div id="contactlist" class="container text-center">
+				<div class="text-color">
+					<h2>Contact List 📁</h2>
+				</div>
+			</div>
+			<br>
+			<div class="table-responsive text-center">
+				<table class="table contact">
+					<thead>
+						<tr>
+							<th scope="col" class="text-white">#</th>
+						<th scope="col" class="text-white">Firstname</th>
+						<th scope="col" class="text-white">Lastname</th>
+						<th scope="col" class="text-white">Subject</th>
+						<th scope="col" class="text-white">Message</th>
+						<th scope="col" class="text-white">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for contact in contacts %}
+						<tr>
+							<th scope="row" class="text-white">{{ contact.id }}</th>
+						<td>{{ contact.firstname }}</td>
+						<td>{{ contact.lastname }}</td>
+						<td>{{ contact.subject }}</td>
+						<td>{{ contact.message }}</td>
+							<td>
+								<a href="/admin/deleteContact/{{ contact.id }}" class="btn btn-danger">Delete</a>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<div class="container p-3 mb-6 text-center">
+				<a href="/admin/addCategories" class="btn btn-light">Add a category</a>
+			</div>				
+		</div>
+	</div>
+	{% endblock %}

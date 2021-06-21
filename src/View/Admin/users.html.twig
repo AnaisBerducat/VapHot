@@ -1,0 +1,22 @@
+{% extends 'layout-admin.html.twig' %}
+{% block title %} Users{% endblock %}
+{% block content %}
+<div class="bgproducts">
+    <br>
+    <div id="userlist" class="container text-center">
+        <div class="text-color">
+            <h1>UserList 🧍</h1>
+        </div>
+    <div class="container p-5 col-lg-8 col-md-12 col-xs-12">        
+        <ul class="list-group">
+            {% for user in users %}
+            <li class="list-group-item">{{ user.email }}</li>
+            <li class="list-group-item">{{ user.is_admin }}</li>
+			<a href="/admin/deleteUser/{{ user.id }}" class="btn btn-danger">Delete</a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+    {% endblock %}
+    

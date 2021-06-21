@@ -1,0 +1,41 @@
+{% extends 'layout-admin.html.twig' %}
+{% block title %} - Orders{% endblock %}
+{% block content %}
+
+<div class="navbar_admin">
+	<div class="container-fluid p-5">
+		<h3>Order Lists</h3>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Created at</th>
+						<th scope="col">Total</th>
+						<th scope="col">Address</th>
+						<th scope="col">ID Products</th>
+                        <th scope="col">Qty</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for order in orders %}
+					<tr>
+						<th scope="row">{{ command.id }}</th>
+						<td>{{ command.created_at }}</td>
+						<td>{{ command.total }}</td>
+						<td>{{ command.address }}</td>
+						<td>{{ command_article.command_id }}</td>
+                        <td>{{ command_article.qty }}</td>
+						<td>
+							<a href="/admin/deleteContact/{{ contact.id }}" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Contact{% endblock %}
+{% block content %}
+<div class="bgproducts">
+    <br>
+    <div id="contact" class="container text-center">
+        <div class="text-color">
+            <h1>Contact 📱</h1>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <br>
+                {% if errors is not empty %}
+                    {% for error in errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <p>{{error}}</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <form method="POST">
+                    <br>
+                        <div class="mb-3 text-center text-white">
+                            <label for="firstname" class="form-label">Firstname</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname">
+                        </div>
+                        <div class="mb-3 text-center text-white">
+                            <label for="lastname" class="form-label">Lastname</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname">
+                        </div>
+                        <div class="mb-3 text-center text-white">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject">
+                        </div>
+                        <div class="mb-3 text-center text-white shadow p-3 mb-5">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+                        </div>
+                        <br>
+                        <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-light">Send</button>
+                        </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
